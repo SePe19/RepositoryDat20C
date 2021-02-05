@@ -1,11 +1,21 @@
 package exercise;
 
 public class Bog {
-    public String getiSBNNummer() {
+    private int iSBNNummer;
+    private String titel;
+    private int udgivelsesaar;
+
+    public Bog(int iSBNNummer, String titel, int udgivelsesaar) {
+        this.iSBNNummer = iSBNNummer;
+        this.titel = titel;
+        this.udgivelsesaar = udgivelsesaar;
+    }
+
+    public int getISBNNummer() {
         return iSBNNummer;
     }
 
-    public void setiSBNNummer(String iSBNNummer) {
+    public void setISBNNummer(int iSBNNummer) {
         this.iSBNNummer = iSBNNummer;
     }
 
@@ -25,16 +35,6 @@ public class Bog {
         this.udgivelsesaar = udgivelsesaar;
     }
 
-    private String iSBNNummer;
-    private String titel;
-    private int udgivelsesaar;
-
-
-    public Bog(String iSBNNummer, String titel, int udgivelsesaar) {
-        this.iSBNNummer = iSBNNummer;
-        this.titel = titel;
-        this.udgivelsesaar = udgivelsesaar;
-    }
 
     @Override
     public String toString() {

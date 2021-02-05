@@ -6,24 +6,26 @@ public class Bibliotek {
     private static ArrayList<Bog> bibliotek = new ArrayList<>();
 
     public static void main(String[] args) {
-        Bog paranoia = new Bog("1234567891011","Paranoia",1999);
-        Bog peterPedal = new Bog("1234567891091","Peter Pedal",1992);
-        Bog pippiLangstrømpe = new Bog("1234567491411","Pippi på eventyr",1962);
+        Bog paranoia = new Bog(1234567011,"Paranoia",1999);
+        Bog peterPedal = new Bog(1234567091,"Peter Pedal",1992);
+        Bog pippiLangstrømpe = new Bog(1234591411,"Pippi på eventyr",1962);
         bibliotek.add(paranoia);
         bibliotek.add(peterPedal);
         bibliotek.add(pippiLangstrømpe);
-        objektISBN(paranoia);
-        objektISBN(peterPedal);
-        objektISBN(pippiLangstrømpe);
+        System.out.println(objektISBN(bibliotek, paranoia));
+        System.out.println(objektISBN(bibliotek, peterPedal));
+        System.out.println(objektISBN(bibliotek, pippiLangstrømpe));
     }
 
-    public static boolean objektISBN(Bog bog){
-        Bog bog1 = new Bog("1234567891011","John Dillermand",2021);
-        if(bog1.getiSBNNummer().equals(bibliotek.get(bibliotek.indexOf(objektISBN(bog))).getiSBNNummer())){
-            return true;
+    public static boolean objektISBN(ArrayList<Bog> b, Bog bog){
+        for (int i = 0; i < b.size(); i++) {
+            if(bog.getISBNNummer() == b.get(i).getISBNNummer()){
+                return true;
+            }
+            else {
+                return false;
+            }
         }
-        else {
-            return false;
-        }
+        return false;
     }
 }
