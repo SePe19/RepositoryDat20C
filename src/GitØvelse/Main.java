@@ -14,9 +14,15 @@ public class Main {
         names.add("Simon");
         names.add("Jose");
         names.add("Hamzah");
+        names.add("Prutskid");
 
+        navneArray.printProblemDescription();
+        navneArray.doesArraylistContainString(names, "Mette");
+        navneArray.doesArraylistContainString(names, "Mette");
 
-        navneArray.doesArralistContainString(names, "Hans");
+        for (int i = 0; i < names.size(); i++){
+            System.out.println(names.get(i));
 
+        }
     }
 }
